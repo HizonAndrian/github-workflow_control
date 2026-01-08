@@ -37,7 +37,7 @@ jobs:
         id: run-tests
         run: npm run test
       - name: Upload test report
-        # Check if the result was 'failure'.
+        # Check if the step result was 'failure'.
         # Only perform this step if it is true.
         if: failure() && steps.run-tests.outcome == 'failure'
         uses: actions/upload-artifact@v4
@@ -78,12 +78,3 @@ jobs:
         run: ls
       - name: Deploy
         run: echo "Deploying..."
-  report:
-    needs: [lint, deploy]
-    if: failure()
-    runs-on: ubuntu-latest
-    steps:
-      - name: Output of one the jobs failed.
-        run: |
-          echo "It worked."
-          echo "Yes sir"
