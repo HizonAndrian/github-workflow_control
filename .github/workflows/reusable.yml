@@ -1,11 +1,12 @@
 name: Reusable
 on: 
   workflow_call:
-    inputs: artifact-name
-        # description:
-        # required: true
-        # default
-        # type: string
+    inputs: 
+      artifact-name:
+        description: Required Code.
+        required: true
+        default: dist
+        type: string
 jobs:
   deploy:
     runs-on: ubuntu-latest
