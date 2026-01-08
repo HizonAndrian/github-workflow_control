@@ -86,4 +86,4 @@ jobs:
       - name: Output of one the jobs failed.
         run: |
           echo "It worked."
-          echo "Yes sir"
+          echo "{{ github }}"
