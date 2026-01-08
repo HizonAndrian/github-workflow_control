@@ -39,7 +39,7 @@ jobs:
       - name: Upload test report
         # Check if the step result was 'failure'.
         # Only perform this step if it is true.
-        if: steps.run-tests.out == 'failure'
+        if: failure() && steps.run-tests.out == 'failure'
         uses: actions/upload-artifact@v4
         with:
           name: test-report
